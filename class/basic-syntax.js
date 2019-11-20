@@ -1,21 +1,53 @@
-// // class User {
-// //   constructor(name) {
-// //     this.name = name;
-// //   }
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
 
-// //   sayHi() {
-// //     console.log(`${this.name} hi`);
-// //   }
-// // }
+//   sayHi() {
+//     console.log(`${this.name} hi`);
+//   }
+// }
 
-// // let usr = new User('Vlados-bandos');
+// let usr = new User('Vlados-bandos');
 
-// // usr.sayHi();
+// usr.sayHi();
 
+// task 1
+class Clock {
+  constructor({ template }) {
+    this.template = template;
+  }
 
-console.log(typeof {})
-console.log(typeof Object)
-console.log(typeof String())
-console.log(typeof new String())
-console.log(typeof null)
-console.log(typeof undefined)
+  render() {
+    let date = new Date();
+
+    let hours = date.getHours();
+    if (hours < 10) hours = '0' + hours;
+
+    let mins = date.getMinutes();
+    if (mins < 10) mins = '0' + mins;
+
+    let secs = date.getSeconds();
+    if (secs < 10) secs = '0' + secs;
+
+    let output = this.template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs);
+
+    console.log(output);
+  }
+
+  stop() {
+    clearInterval(this.timer);
+  };
+
+  start() {
+    this.render();
+    this.timer = setInterval(this.render(), 1000);
+  };
+
+}
+
+let clock = new Clock({ template: 'h:m:s' });
+clock.start();
