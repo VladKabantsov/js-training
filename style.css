@@ -1,0 +1,89 @@
+.d-grid {
+    display: grid;
+}
+
+.d-grid > div {
+    background: gold;
+    padding: .5em;
+}
+
+.grid-wrapper {
+    grid-gap: 2vw;
+    height: 100%;
+}
+
+.basic {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.repeat {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.template {
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns: 20% 1fr 15%;
+    grid-gap: 15px;
+    height: 100%;
+}
+
+.article {
+    grid-template-areas:
+    "header header header"
+    "nav main ads"
+    "footer footer footer";
+}
+
+.blog {
+    grid-template-areas:
+    "nav header header"
+    "nav main ads"
+    "nav footer ads";
+}
+
+.block-header {
+    grid-area: header;
+}
+
+.block-footer {
+    grid-area: footer;
+}
+
+.block-main {
+    grid-area: main;
+}
+
+.block-nav {
+    grid-area: nav;
+}
+
+.block-ads {
+    grid-area: ads;
+}
+
+.auto-fill {
+    /* minmax(900px, 1fr) */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 2vw;
+}
+
+.auto-fit {
+    grid-gap: 2vw;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.explicit-grid {
+    grid-template-rows: 60px 60px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.auto-rows {
+    grid-auto-rows: 60px;
+}
+
+.auto-flow-column {
+    grid-auto-flow: column;
+}
