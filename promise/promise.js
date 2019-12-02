@@ -12,3 +12,13 @@ function delay(ms) {
 }
   
 delay(3000).then(() => console.log('выполнилось через 3 секунды'));
+
+function User() { }
+User.prototype = { admin: false };
+let user = new User();
+User.prototype = { admin: true };
+console.log(user.admin);
+
+for(var i=0; i<10; i++)  {
+}
+console.log(i);
